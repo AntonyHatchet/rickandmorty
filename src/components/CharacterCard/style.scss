@@ -12,21 +12,23 @@
 
   .card_header {
     height: 300px;
+    position: relative;
 
     .card_header_cover_image {
       position: relative;
-      margin-bottom: -81px;
+      width: 300px;
     }
 
     .card_header_text_block {
-      position: relative;
+      position: absolute;
       background-color: rgba(0, 0, 0, 0.705);
       color: rgb(214, 214, 214);
       padding: 0.625rem;
+      width: 100%;
+      bottom: 0;
 
       h2 {
         margin-top: 0;
-        font-size: 1.3rem;
       }
     }
   }
@@ -41,6 +43,20 @@
       cursor: pointer;
       position: relative;
 
+      .card_body_element {
+        &:first-child {
+          border-bottom: 2px solid rgba(129, 126, 126, 0.233);
+        }
+      }
+
+      &:last-child {
+        .card_body_element {
+          &:first-child {
+            border: none;
+          }
+        }
+      }
+
       &:hover {
         color: rgb(138, 110, 241);
       }
@@ -52,7 +68,7 @@
       justify-content: space-between;
       margin-bottom: 0.7rem;
       border-bottom: 2px solid rgba(129, 126, 126, 0.233);
-      padding: 0.75rem 0px 0.375rem;
+      padding: 0 0 0.375rem;
 
       &:last-child {
         border: none;

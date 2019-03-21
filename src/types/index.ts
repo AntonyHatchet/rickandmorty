@@ -1,24 +1,21 @@
-import { Dispatch as ReduxDispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
 
 import { CharactersState, CharacterAction } from "./characters";
 import { LocationsState, LocationsAction } from "./locations";
-import {
-  VisibilityFilterState,
-  VisibilityFilterAction
-} from "./visibilityFilter";
+import { EpisodesState, EpisodesAction } from "./episodes";
+
 import { ModalState, ModalActions } from "./modals";
 
 export type ReduxInitAction = { type: "@@INIT" };
 
 export type State = CharactersState &
-  VisibilityFilterState &
+  EpisodesState &
   ModalState &
   LocationsState;
 
 export type Actions =
   | ReduxInitAction
-  | VisibilityFilterAction
+  | EpisodesAction
   | CharacterAction
   | ModalActions
   | LocationsAction;

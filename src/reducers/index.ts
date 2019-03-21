@@ -1,11 +1,11 @@
 import characters from "./characters";
-import visibilityFilter from "./visibilityFilter";
 import modals from "./modals";
 import location from "./locations";
+import episodes from "./episodes";
 
 export default {
   characters,
-  visibilityFilter,
   modals,
-  location
+  location,
+  episodes
 };

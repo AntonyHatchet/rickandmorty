@@ -3,7 +3,7 @@ import { Character } from "../../types/characters";
 import CardElement from "../CardElement";
 import ActiveCardElement from "../../containers/ActiveCardElement";
 import Location from "../../containers/Location";
-// import ActiveCardElement from "../../containers/ActiveCardElement";
+import Episodes from "../../containers/Episodes";
 
 import "./style.scss";
 
@@ -46,6 +46,7 @@ const CharacterCard = (props: CharacterData) => {
         ) : (
           <CardElement name="last location" value={props.data.origin.name} />
         )}
+        <Episodes id={props.data.id} urls={props.data.episode} />
       </div>
     </article>
   );

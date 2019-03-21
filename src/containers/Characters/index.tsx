@@ -20,7 +20,7 @@ class Locations extends React.Component<any, any> {
   fetchData = () => {
     this.props.loadCharacters(
       `https://rickandmortyapi.com/api/character/?page=${Math.round(
-        Math.random() * (26 - 1 + 1)
+        Math.random() * (26 - 1) + 1
       )}`
     );
   };

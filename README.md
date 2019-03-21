@@ -1,6 +1,10 @@
 # rickandmorty
 Challenge project for HA
 
+## Requirments
+* Node.js v10.15.0 or higher
+* yarn 1.13.0 or higher
+
 ## Run Dev-mode
 
 `yarn && yarn start:dev`

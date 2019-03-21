@@ -1,0 +1,57 @@
+@import "./_variables.scss";
+@import "./_fonts.scss";
+
+body {
+  @include open-sans;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: $text-color;
+  position: relative;
+  min-height: 100vh;
+  min-width: 320px;
+  color: #777;
+}
+
+.clear {
+  clear: both;
+  height: 1px;
+  overflow: hidden;
+  margin-top: -1px;
+}
+
+label,
+input[type="button"] {
+  cursor: pointer;
+}
+
+::selection {
+  color: #ff9800;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  list-style-position: outside;
+  overflow: hidden;
+}
+
+.page-main>* {
+  min-height: calc(100vh - 122px);
+
+  @include tablet {
+    min-height: calc(100vh - 159px);
+  }
+
+  @include mobile {
+    min-height: calc(100vh - 155px);
+  }
+
+  @include grey-background;
+  @include footer-paddings;
+}
+
+@include font-face("Open Sans", "../../fonts/open-sans-latin-regular", 400);
+@include font-face("Open Sans", "../../fonts/open-sans-latin-bold", 600);
+// @include font-face('Open Sans', '../../fonts/open-sans-latin-italic', 400, italic);

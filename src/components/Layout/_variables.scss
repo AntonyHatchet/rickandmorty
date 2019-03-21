@@ -1,0 +1,222 @@
+@import "./_fonts.scss";
+
+$main-color: #db4863;
+$error-color: #db2015;
+$white-color: #fff;
+$black-color: #000;
+$green-color: #afd23f;
+$grey-color: #999;
+$yellow-color: #f8f38b;
+$orange-color: #ff9d00;
+$second-color: #00a2ef;
+$fb-color: #314a7e;
+$tw-color: #339dc3;
+$inst-color: #60170e;
+$text-color: #333;
+$subtitle-color: #666;
+$border-color: #eaeaea;
+$form-border-color: #e6e6e6;
+$live-data-color: #9f9f9f;
+$overlay-color: transparentize(#f3f3f3, 0.2);
+$search-icon-color: #c2c2c2;
+$messages-bg: #f3f3f3;
+$messages-border: #e1e1e1;
+$messages-outline: #e7e7e7;
+$messages-time: #9f9f9f;
+$blog-link: #205090;
+
+$inactive-opacity: 0.4;
+$hover-opacity: 0.8;
+$main-transition: all .2s ease-in-out;
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$max-desktop-width: 1040px;
+$content-width: 1200px;
+$max-content-width: 1440px;
+
+@mixin mobile {
+	@media (max-width: #{$tablet-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+@mixin hover-active-element ($opacity: $hover-opacity) {
+	transition: $main-transition;
+
+	&:not(:disabled):hover {
+		opacity: $opacity;
+		cursor: pointer;
+	}
+
+	&:not(:disabled):active {
+		opacity: $opacity;
+		cursor: pointer;
+	}
+}
+
+@mixin link {
+	color: $text-color;
+	cursor: pointer;
+	transition: $main-transition;
+	text-decoration: none;
+
+	&:hover {
+		color: $main-color;
+	}
+
+	&:active {
+		color: $second-color;
+		cursor: pointer
+	}
+}
+
+@mixin title-font {
+	font-size: 56px;
+	font-weight: 300;
+	text-align: center;
+	padding-top: 12px;
+	padding-bottom: 20px;
+
+	@include tablet {
+		font-size: 48px;
+		padding-bottom: 15px;
+	}
+
+	@include mobile {
+		font-size: 32px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+
+@mixin subtitle-font {
+	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
+	line-height: 24px;
+
+	@include tablet {
+		font-size: 15px;
+		line-height: 22px;
+	}
+
+	@include mobile {
+		font-size: 13px;
+		line-height: 19px;
+	}
+}
+
+@mixin steps-title-font {
+	font-size: 20px;
+	font-weight: inherit;
+	text-align: center;
+	@include open-sans;
+
+	@include tablet {
+		font-size: 17px;
+	}
+
+	@include mobile {
+		font-size: 18px;
+	}
+}
+
+@mixin steps-subtitle-font {
+	font-size: 14px;
+	font-weight: inherit;
+	text-align: center;
+	line-height: 16px;
+	@include open-sans;
+
+	@include tablet {
+		font-size: 13px;
+	}
+
+	@include mobile {
+		font-size: 12px;
+	}
+}
+
+@mixin story-content {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+@mixin grey-background {
+	background-color: #f3f3f3;
+}
+
+@mixin button-main-gradient {
+	background-color: #da7386;
+	background-image: linear-gradient(to right, #da7386, #db4863);
+
+	&:hover {
+		background-color: rgba(218, 115, 134, 0.75);
+		background-image: linear-gradient(to right, rgba(218, 115, 134, 0.75), rgba(219, 72, 99, 0.75));
+	}
+}
+
+@mixin button-light-gradient {
+	background-color: #ffe7eb;
+	background-image: linear-gradient(to right, #ffe7eb, #fff1f4);
+
+	&:hover {
+		background-color: rgba(255, 231, 235, 0.75);
+		background-image: linear-gradient(to right, rgba(255, 231, 235, 0.75), rgba(255, 241, 244, 0.75));
+	}
+}
+
+@mixin border-top-radius-desktop {
+	border-top-left-radius: 50% 40px;
+	border-top-right-radius: 50% 40px;
+}
+
+@mixin border-bottom-radius-desktop {
+	border-bottom-left-radius: 50% 40px;
+	border-bottom-right-radius: 50% 40px;
+}
+
+@mixin border-top-radius-mobile {
+	border-top-left-radius: 50% 20px;
+	border-top-right-radius: 50% 20px;
+}
+
+@mixin border-bottom-radius-mobile {
+	border-bottom-left-radius: 50% 20px;
+	border-bottom-right-radius: 50% 20px;
+}
+
+@mixin rounded-photo-substrate {
+	overflow: hidden;
+	box-shadow: 10px 10px 40px rgba(0, 0, 0, .3);
+	background-color: $main_color;
+	border-radius: 25px;
+}
+
+@mixin footer-paddings {
+	padding-bottom: 52px;
+
+	@include tablet {
+		padding-bottom: 89px;
+	}
+
+	@include mobile {
+		padding-bottom: 99px;
+	}
+}
